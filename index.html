@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Departamento en Venta — SoHo San Martín, Miraflores</title>
+<meta name="description" content="Departamento de estreno en venta frente a Maido, el mejor restaurante del mundo. 69m², 2 dormitorios, 2 baños, cochera y depósito. Edificio SoHo San Martín, Miraflores, Lima. Venta directa del propietario.">
+<meta property="og:title" content="Departamento en Venta frente a Maido — SoHo San Martín, Miraflores">
+<meta property="og:description" content="69m² · 2 Dorm · 2 Baños · Cochera · Depósito · Amoblado · Frente a Maido (N°1 del mundo) · Edificio de estreno con amenidades premium.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://depa-miraflores.pe">
+<link rel="canonical" href="https://depa-miraflores.pe">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --sand: #F5F0EB;
+  --cream: #FAF8F5;
+  --warm-brown: #8B7355;
+  --gold: #C4A265;
+  --dark: #1A1A1A;
+  --text: #3D3D3D;
+  --muted: #7A7A7A;
+  --light-border: #E8E2DB;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+/* ========== HERO ========== */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  background: var(--dark);
+}
+
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-slider .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-slider .slide.active { opacity: 1; }
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.1) 0%,
+    rgba(0,0,0,0.15) 40%,
+    rgba(0,0,0,0.6) 80%,
+    rgba(0,0,0,0.75) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 clamp(1.5rem, 5vw, 6rem) 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-label {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s 0.3s forwards;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s 0.5s forwards;
+}
+
+.hero-address {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s 0.7s forwards;
+}
+
+.hero-specs {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s 0.9s forwards;
+}
+
+.hero-spec {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+.hero-spec + .hero-spec::before {
+  content: '·';
+  margin-right: 1.5rem;
+  color: rgba(255,255,255,0.3);
+}
+
+/* Navigation dots */
+.hero-dots {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+
+.hero-dot.active {
+  background: var(--gold);
+  transform: scale(1.3);
+}
+
+/* Nav */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.2rem clamp(1.5rem, 5vw, 6rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.4s;
+}
+
+.nav.scrolled {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.4s;
+}
+
+.nav.scrolled .nav-logo { color: var(--dark); }
+
+.nav-cta {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.5rem;
+  background: var(--gold);
+  color: var(--dark);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.nav-cta:hover { background: var(--warm-brown); color: #fff; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== SECTIONS ========== */
+section { padding: clamp(3rem, 8vw, 7rem) clamp(1.5rem, 5vw, 6rem); }
+
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--warm-brown);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+}
+
+/* ========== SPECS GRID ========== */
+.specs-section { background: var(--sand); }
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.spec-card {
+  background: #fff;
+  padding: 1.8rem 1.2rem;
+  text-align: center;
+  border: 1px solid var(--light-border);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.spec-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+}
+
+.spec-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--warm-brown);
+  margin-bottom: 0.25rem;
+}
+
+.spec-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+/* ========== GALLERY ========== */
+.gallery-grid {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.gallery-grid.rooms {
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.gallery-grid.two-col {
+  grid-template-columns: 1fr 1fr;
+}
+
+.gallery-grid.three-col {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 16/9;
+}
+
+.gallery-item.tall { aspect-ratio: 3/4; grid-row: span 2; }
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img { transform: scale(1.04); }
+
+.gallery-item .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1rem 0.8rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.5));
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.4s;
+}
+
+.gallery-item:hover .caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== FLOOR PLAN ========== */
+.floor-plan-section { background: #fff; }
+
+.floor-plan-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.floor-plan-image {
+  background: var(--sand);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.floor-plan-image img {
+  max-height: 500px;
+  width: auto;
+  max-width: 100%;
+}
+
+.room-list { list-style: none; }
+
+.room-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--light-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.room-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.room-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: right;
+  max-width: 50%;
+}
+
+/* ========== BUILDING ========== */
+.building-section {
+  background: var(--dark);
+  color: #fff;
+}
+
+.building-section .section-label { color: var(--gold); }
+.building-section .section-title { color: #fff; }
+.building-section .section-desc { color: rgba(255,255,255,0.5); }
+
+.building-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.building-col h3 {
+  font-size: 0.7rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.building-item {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.75);
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.building-item::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ========== SPECS TABLE ========== */
+.acabados-section { background: var(--sand); }
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.specs-table th,
+.specs-table td {
+  text-align: left;
+  padding: 0.85rem 1rem;
+  font-size: 0.88rem;
+}
+
+.specs-table thead th {
+  background: var(--warm-brown);
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.specs-table tbody tr {
+  border-bottom: 1px solid var(--light-border);
+  transition: background 0.2s;
+}
+
+.specs-table tbody tr:hover { background: rgba(255,255,255,0.6); }
+
+.specs-table td:first-child {
+  font-weight: 500;
+  color: var(--dark);
+  white-space: nowrap;
+  width: 160px;
+}
+
+.specs-table td:last-child { color: var(--muted); }
+
+/* ========== PRICE ========== */
+.price-section {
+  background: #fff;
+  text-align: center;
+}
+
+.price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 700;
+  color: var(--dark);
+  margin: 1rem 0 0.5rem;
+}
+
+.price-sub {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 3rem;
+}
+
+.value-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.value-card {
+  background: var(--sand);
+  padding: 2rem;
+  border-left: 3px solid var(--gold);
+}
+
+.value-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--warm-brown);
+  margin-bottom: 0.2rem;
+}
+
+.value-card-sub {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+}
+
+.value-card-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ========== CTA / CONTACT ========== */
+.cta-section {
+  background: var(--dark);
+  text-align: center;
+  padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 5vw, 6rem);
+}
+
+.cta-section .section-label { color: var(--gold); }
+
+.cta-section h2 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.cta-address {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem 2.2rem;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.cta-btn.primary {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+.cta-btn.primary:hover { background: #d4b475; }
+
+.cta-btn.secondary {
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+}
+
+.cta-btn.secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* WhatsApp icon */
+.wa-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231A1A1A'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E") no-repeat center/contain;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: var(--cream);
+  border-top: 1px solid var(--light-border);
+}
+
+/* ========== LIGHTBOX ========== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .hero-dots { display: none; }
+  
+  .floor-plan-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .building-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .gallery-grid.rooms,
+  .gallery-grid.two-col,
+  .gallery-grid.three-col {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-item.tall {
+    grid-row: span 1;
+    aspect-ratio: 16/9;
+  }
+  
+  .specs-table td:first-child { white-space: normal; }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== LOCATION ========== */
+.location-section {
+  background: var(--dark);
+  color: #fff;
+  overflow: hidden;
+}
+
+.location-section .section-label { color: var(--gold); }
+.location-section .section-title { color: #fff; }
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+  align-items: start;
+}
+
+.location-highlights { display: flex; flex-direction: column; gap: 1.8rem; }
+
+.loc-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.loc-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  background: rgba(196,162,101,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.loc-card h4 {
+  font-size: 1.05rem;
+  color: #fff;
+  margin-bottom: 0.15rem;
+}
+
+.loc-card p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.4;
+}
+
+.loc-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--dark);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.location-map {
+  width: 100%;
+  min-height: 380px;
+  border: 1px solid rgba(255,255,255,0.08);
+  filter: grayscale(0.3) brightness(0.85);
+}
+
+.parking-callout {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.05);
+  border-left: 3px solid var(--gold);
+}
+
+.parking-callout h4 {
+  font-size: 1rem;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+
+.parking-callout p {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ========== COMMON AREAS GALLERY ========== */
+.areas-scroll {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.areas-scroll::-webkit-scrollbar { height: 4px; }
+.areas-scroll::-webkit-scrollbar-track { background: var(--light-border); }
+.areas-scroll::-webkit-scrollbar-thumb { background: var(--warm-brown); border-radius: 2px; }
+
+.areas-card {
+  min-width: 320px;
+  max-width: 420px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 4/3;
+}
+
+.areas-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+
+.areas-card:hover img { transform: scale(1.04); }
+
+.areas-card .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 0.8rem 0.6rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.55));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.areas-hint {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+  text-align: right;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .location-grid { grid-template-columns: 1fr; }
+  .areas-card { min-width: 280px; }
+}
+
+/* Disclaimer */
+.disclaimer {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  margin-top: 2rem;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">SoHo San Martín</a>
+  <a href="#contacto" class="nav-cta">Agendar Visita</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-slider" id="heroSlider">
+    <div class="slide active" style="background-image:url('fotos/sala-01.jpg')"></div>
+    <div class="slide" style="background-image:url('fotos/dormitorio-01.jpg')"></div>
+    <div class="slide" style="background-image:url('fotos/cocina-01.jpg')"></div>
+    <div class="slide" style="background-image:url('fotos/sala-02.jpg')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-dots" id="heroDots"></div>
+  <div class="hero-content">
+    <p class="hero-label">Departamento en Venta — Dueño Directo</p>
+    <h1>SoHo San Martín</h1>
+    <p class="hero-address">Calle San Martín 380, esq. Calle Colón · Miraflores, Lima · Frente a Maido</p>
+    <div class="hero-specs">
+      <span class="hero-spec">69 m²</span>
+      <span class="hero-spec">2 Dormitorios</span>
+      <span class="hero-spec">2 Baños</span>
+      <span class="hero-spec">Cochera + Depósito</span>
+      <span class="hero-spec">Amoblado</span>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="specs-section" id="detalles">
+  <div class="section-inner reveal">
+    <p class="section-label">Resumen</p>
+    <h2 class="section-title">Una oportunidad única en<br>el corazón de Miraflores</h2>
+    <p class="section-desc">Departamento de estreno en edificio sostenible con certificación ambiental, frente a Maido — el mejor restaurante del mundo (50 Best 2025) — y en la esquina de Rafael. A 2 cuadras de Av. Larco, 3 del Parque Kennedy y 5 minutos de Larcomar. Venta directa del propietario, sin intermediarios.</p>
+    <div class="specs-grid">
+      <div class="spec-card">
+        <div class="spec-value">69 m²</div>
+        <div class="spec-label">Área techada</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-value">2</div>
+        <div class="spec-label">Dormitorios</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-value">2</div>
+        <div class="spec-label">Baños completos</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-value">Piso alto</div>
+        <div class="spec-label">Vista exterior</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-value">Cochera</div>
+        <div class="spec-label">Amplia, fácil acceso</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-value">Depósito</div>
+        <div class="spec-label">Incluido</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY: SALA COMEDOR -->
+<section id="galeria">
+  <div class="section-inner reveal">
+    <p class="section-label">Sala Comedor</p>
+    <h2 class="section-title">Espacios integrados con diseño contemporáneo</h2>
+    <div class="gallery-grid rooms">
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="fotos/sala-01.jpg" alt="Sala de estar" loading="lazy">
+        <div class="caption">Sala de Estar</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="fotos/comedor-01.jpg" alt="Comedor" loading="lazy">
+        <div class="caption">Comedor</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="fotos/sala-02.jpg" alt="Vista integrada" loading="lazy">
+        <div class="caption">Vista Integrada</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY: COCINA -->
+<section style="background:var(--sand)">
+  <div class="section-inner reveal">
+    <p class="section-label">Kitchenette</p>
+    <h2 class="section-title">Equipada y lista para usar</h2>
+    <p class="section-desc">Cocina a gas de 4 hornillas, horno empotrado, campana extractora, refrigeradora. Muebles de melamina con tablero de granito. Barra americana integrada.</p>
+    <div class="gallery-grid two-col">
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="fotos/cocina-01.jpg" alt="Cocina" loading="lazy">
+        <div class="caption">Kitchenette</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="fotos/cocina-02.jpg" alt="Cocina barra" loading="lazy">
+        <div class="caption">Barra Americana</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY: DORMITORIOS -->
+<section>
+  <div class="section-inner reveal">
+    <p class="section-label">Dormitorios</p>
+    <h2 class="section-title">Descanso y funcionalidad</h2>
+    <div class="gallery-grid rooms" style="margin-bottom:2rem">
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="fotos/dormitorio-01.jpg" alt="Dormitorio principal" loading="lazy">
+        <div class="caption">Dormitorio Principal</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="fotos/dormitorio-02.jpg" alt="Dormitorio principal TV" loading="lazy">
+        <div class="caption">TV + Vestidor</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="fotos/dormitorio-03.jpg" alt="Segundo dormitorio" loading="lazy">
+        <div class="caption">Segundo Dormitorio</div>
+      </div>
+    </div>
+    <div class="gallery-grid two-col">
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="fotos/dormitorio-04.jpg" alt="Segundo dormitorio detalle" loading="lazy">
+        <div class="caption">Escritorio + Closet</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="fotos/dormitorio-05.jpg" alt="Vista dormitorios" loading="lazy">
+        <div class="caption">Segundo Dormitorio — TV</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY: BAÑOS -->
+<section style="background:var(--sand)">
+  <div class="section-inner reveal">
+    <p class="section-label">Baños</p>
+    <h2 class="section-title">Acabados de primera con grifería de ahorro hídrico</h2>
+    <p class="section-desc">Grifería Vainsa con tecnología de ahorro de agua. Tablero y ovalín en polvo de mármol blanco. Espejo de pared completa.</p>
+    <div class="gallery-grid two-col">
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="fotos/bano-01.jpg" alt="Baño principal" loading="lazy">
+        <div class="caption">Baño Principal</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="fotos/bano-02.jpg" alt="Baño secundario" loading="lazy">
+        <div class="caption">Baño Secundario</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACIÓN PRIVILEGIADA -->
+<section class="location-section" id="ubicacion">
+  <div class="section-inner reveal">
+    <p class="section-label">Ubicación Privilegiada</p>
+    <h2 class="section-title">En el epicentro gastronómico<br>y cultural de Miraflores</h2>
+    <div class="location-grid">
+      <div class="location-highlights">
+        <div class="loc-card">
+          <div class="loc-icon">🍽️</div>
+          <div>
+            <span class="loc-badge">N°1 del Mundo — 50 Best 2025</span>
+            <h4>Frente a Maido</h4>
+            <p>El mejor restaurante del mundo según The World's 50 Best Restaurants 2025, del chef Mitsuharu 'Micha' Tsumura. Literalmente cruzando la calle.</p>
+          </div>
+        </div>
+        <div class="loc-card">
+          <div class="loc-icon">🥂</div>
+          <div>
+            <h4>En la esquina de Rafael</h4>
+            <p>Restaurante emblemático de Lima, reconocido internacionalmente. A pasos de tu puerta.</p>
+          </div>
+        </div>
+        <div class="loc-card">
+          <div class="loc-icon">🛍️</div>
+          <div>
+            <h4>A 2 cuadras de Av. Larco</h4>
+            <p>El eje principal que conecta Parque Kennedy con Larcomar. Tiendas, cafés, bancos, transporte — todo a pie.</p>
+          </div>
+        </div>
+        <div class="loc-card">
+          <div class="loc-icon">🌊</div>
+          <div>
+            <h4>Larcomar y Malecón a 5 minutos</h4>
+            <p>Centro comercial con vista al Pacífico, cines, restaurantes y acceso directo al malecón para caminar o correr.</p>
+          </div>
+        </div>
+        <div class="loc-card">
+          <div class="loc-icon">🌳</div>
+          <div>
+            <h4>Parque Kennedy a 3 cuadras</h4>
+            <p>El corazón de Miraflores. Feria artesanal, anfiteatro, cafés y vida nocturna.</p>
+          </div>
+        </div>
+        <div class="parking-callout">
+          <h4>🚗 Cochera amplia y de fácil acceso</h4>
+          <p>Ingreso vehicular directo por Calle Colón. Rampa doble con puerta levadiza. Estacionamiento cómodo en sótano, sin maniobras complicadas.</p>
+        </div>
+      </div>
+      <div>
+        <iframe class="location-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.5!2d-77.0295!3d-12.1225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDA3JzIxLjAiUyA3N8KwMDEnNDYuMiJX!5e0!3m2!1ses!2spe!4v1&q=Calle+San+Martin+380+Miraflores+Lima" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0;width:100%;min-height:380px;border-radius:0;"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÁREAS COMUNES -->
+<section id="areas-comunes">
+  <div class="section-inner reveal">
+    <p class="section-label">Áreas Comunes</p>
+    <h2 class="section-title">Amenidades de nivel premium</h2>
+    <p class="section-desc">Gimnasio, kitchen lounge con terraza, zonas de parrilla, spa con sauna y jacuzzi, coworking, cuarto de podcast, lavandería y zona de mascotas.</p>
+    <div class="areas-scroll">
+      <div class="areas-card" onclick="openLightbox(this)">
+        <img src="fotos/areas-01.webp" alt="Kitchen Lounge" loading="lazy">
+        <div class="caption">Kitchen Lounge</div>
+      </div>
+      <div class="areas-card" onclick="openLightbox(this)">
+        <img src="fotos/areas-02.webp" alt="Área Grill" loading="lazy">
+        <div class="caption">Área Grill</div>
+      </div>
+      <div class="areas-card" onclick="openLightbox(this)">
+        <img src="fotos/areas-03.webp" alt="Sauna y Jacuzzi" loading="lazy">
+        <div class="caption">Sauna & Jacuzzi</div>
+      </div>
+      <div class="areas-card" onclick="openLightbox(this)">
+        <img src="fotos/areas-04.webp" alt="Gimnasio" loading="lazy">
+        <div class="caption">Gimnasio</div>
+      </div>
+      <div class="areas-card" onclick="openLightbox(this)">
+        <img src="fotos/areas-05.webp" alt="Área Grill" loading="lazy">
+        <div class="caption">Área Grill</div>
+      </div>
+      <div class="areas-card" onclick="openLightbox(this)">
+        <img src="fotos/areas-06.webp" alt="Área Grill" loading="lazy">
+        <div class="caption">Área Grill</div>
+      </div>
+      <div class="areas-card" onclick="openLightbox(this)">
+        <img src="fotos/areas-07.webp" alt="Co-working" loading="lazy">
+        <div class="caption">Co-working</div>
+      </div>
+      <div class="areas-card" onclick="openLightbox(this)">
+        <img src="fotos/areas-08.webp" alt="Bike Parking" loading="lazy">
+        <div class="caption">Bike Parking</div>
+      </div>
+      <div class="areas-card" onclick="openLightbox(this)">
+        <img src="fotos/areas-09.webp" alt="Pet Washroom" loading="lazy">
+        <div class="caption">Pet Washroom</div>
+      </div>
+      <div class="areas-card" onclick="openLightbox(this)">
+        <img src="fotos/areas-10.webp" alt="Lobby" loading="lazy">
+        <div class="caption">Lobby</div>
+      </div>
+      <div class="areas-card" onclick="openLightbox(this)">
+        <img src="fotos/areas-11.webp" alt="Área Grill" loading="lazy">
+        <div class="caption">Área Grill</div>
+      </div>
+      <div class="areas-card" onclick="openLightbox(this)">
+        <img src="fotos/exterior-01.webp" alt="Exterior del edificio" loading="lazy">
+        <div class="caption">Exterior del Edificio</div>
+      </div>
+    </div>
+    <p class="areas-hint">Desliza para ver más →</p>
+  </div>
+</section>
+
+<!-- FLOOR PLAN -->
+<section class="floor-plan-section" id="plano">
+  <div class="section-inner reveal">
+    <p class="section-label">Distribución</p>
+    <h2 class="section-title">Plano del Departamento X08 · 69.32 m²</h2>
+    <div class="floor-plan-layout">
+      <div class="floor-plan-image">
+        <img src="fotos/plano-dpto.jpg" alt="Plano de distribución" onclick="openLightbox(this.parentElement)">
+      </div>
+      <div>
+        <ul class="room-list">
+          <li class="room-item">
+            <span class="room-name">Sala Comedor</span>
+            <span class="room-desc">Espacio integrado con balcón exterior</span>
+          </li>
+          <li class="room-item">
+            <span class="room-name">Kitchenette</span>
+            <span class="room-desc">Barra americana, equipamiento completo</span>
+          </li>
+          <li class="room-item">
+            <span class="room-name">Dormitorio Principal</span>
+            <span class="room-desc">Suite con vestidor y baño privado</span>
+          </li>
+          <li class="room-item">
+            <span class="room-name">Dormitorio 2 / Flex</span>
+            <span class="room-desc">Escritorio integrado, ideal home office</span>
+          </li>
+          <li class="room-item">
+            <span class="room-name">Baño 1</span>
+            <span class="room-desc">Privado del dormitorio principal</span>
+          </li>
+          <li class="room-item">
+            <span class="room-name">Baño 2</span>
+            <span class="room-desc">Acceso desde área social</span>
+          </li>
+          <li class="room-item">
+            <span class="room-name">Balcón</span>
+            <span class="room-desc">Vista exterior</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILDING -->
+<section class="building-section" id="edificio">
+  <div class="section-inner reveal">
+    <p class="section-label">El Edificio</p>
+    <h2 class="section-title">SoHo San Martín</h2>
+    <p class="section-desc">Edificio de uso mixto con certificación sostenible, ubicado en esquina privilegiada de Miraflores.</p>
+    <div class="building-grid">
+      <div class="building-col">
+        <h3>Infraestructura</h3>
+        <div class="building-item">11 pisos + 5 sótanos</div>
+        <div class="building-item">88 departamentos</div>
+        <div class="building-item">115 estacionamientos</div>
+        <div class="building-item">2 ascensores (Kone/OTIS)</div>
+        <div class="building-item">Lobby con recepción 24h</div>
+        <div class="building-item">Certificación sostenible</div>
+        <div class="building-item">Gas natural Calidda</div>
+        <div class="building-item">Planta de tratamiento de aguas</div>
+        <div class="building-item">CCTV en todo el edificio</div>
+        <div class="building-item">Sistema contra incendios</div>
+      </div>
+      <div class="building-col">
+        <h3>Amenidades</h3>
+        <div class="building-item">Gimnasio con área verde privada</div>
+        <div class="building-item">Kitchen Lounge con terraza</div>
+        <div class="building-item">2 Zonas de parrilla con terraza</div>
+        <div class="building-item">Spa: sauna seco + jacuzzi</div>
+        <div class="building-item">Sala de Coworking</div>
+        <div class="building-item">Cuarto de Podcast</div>
+        <div class="building-item">Lavandería</div>
+        <div class="building-item">Zona de baño para mascotas</div>
+        <div class="building-item">Delivery Room</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACABADOS -->
+<section class="acabados-section" id="acabados">
+  <div class="section-inner reveal">
+    <p class="section-label">Acabados</p>
+    <h2 class="section-title">Especificaciones técnicas</h2>
+    <table class="specs-table">
+      <thead><tr><th>Elemento</th><th>Especificación</th></tr></thead>
+      <tbody>
+        <tr><td>Pisos</td><td>Porcelanato tipo madera importado</td></tr>
+        <tr><td>Paredes</td><td>Empastadas y pintadas con pintura látex lavable</td></tr>
+        <tr><td>Cocina</td><td>Muebles melamina, tablero granito sal y pimienta, cocina 4 hornillas a gas, horno empotrado, campana eléctrica</td></tr>
+        <tr><td>Grifería</td><td>Vainsa, tecnología ahorro de agua, acabado cromo</td></tr>
+        <tr><td>Sanitarios</td><td>Inodoro Vainsa doble descarga (3L/6L), lavatorio en polvo de mármol</td></tr>
+        <tr><td>Puertas</td><td>Principal: contraplacada HDR con lámina PET ecológica. Interiores: HDF</td></tr>
+        <tr><td>Ventanas</td><td>Perfilería de aluminio con cristal templado/laminado incoloro</td></tr>
+        <tr><td>Closets</td><td>Melamina 18mm, cajoneras con correderas metálicas</td></tr>
+        <tr><td>Eléctrico</td><td>Interruptores BTicino Modus Style, tablero termomagnético</td></tr>
+        <tr><td>Gas</td><td>Gas natural Calidda: cocina, horno, calentador, secadora</td></tr>
+        <tr><td>Altura</td><td>2.45m piso a techo, 2.10m a fondo de viga</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="price-section" id="precio">
+  <div class="section-inner reveal">
+    <p class="section-label">Propuesta de Valor</p>
+    <div class="price-amount">USD 220,000</div>
+    <p class="price-sub">Departamento + Cochera + Depósito · Amoblado · Venta directa del propietario</p>
+    <div class="value-cards">
+      <div class="value-card">
+        <div class="value-card-title">USD 3,188/m²</div>
+        <div class="value-card-sub">Precio por metro cuadrado</div>
+        <div class="value-card-desc">Competitivo para edificio de estreno con amenidades premium en zona céntrica de Miraflores.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-card-title">~5.5% yield</div>
+        <div class="value-card-sub">Rentabilidad por alquiler</div>
+        <div class="value-card-desc">Alquiler estimado USD 950–1,100/mes. PER de 17–19 años, alineado al mercado de Miraflores.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-card-title">Agosto 2026</div>
+        <div class="value-card-sub">Entrega disponible</div>
+        <div class="value-card-desc">Entrega desocupada o con inquilino vigente, a elección del comprador.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contacto">
+  <p class="section-label">¿Interesado?</p>
+  <h2>Agende una visita</h2>
+  <p class="cta-address">SoHo San Martín · Calle San Martín 380, esq. Colón · Miraflores, Lima</p>
+  <div class="cta-buttons">
+    <a href="https://wa.me/51943755863?text=Hola%2C%20me%20interesa%20el%20departamento%20en%20SoHo%20San%20Mart%C3%ADn" class="cta-btn primary" target="_blank">
+      <span class="wa-icon"></span>
+      WhatsApp
+    </a>
+    <a href="mailto:sperezpreciado@gmail.com?subject=Consulta%20Departamento%20SoHo%20San%20Mart%C3%ADn" class="cta-btn secondary">
+      Enviar Email
+    </a>
+  </div>
+  <p class="disclaimer">* Precios referenciales sujetos a negociación. Valores de alquiler basados en comparables del mercado. Venta directa del propietario.</p>
+</section>
+
+<footer>
+  <p>Departamento en Venta — SoHo San Martín, Miraflores · Venta directa del propietario · 2026</p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close">&times;</button>
+  <img src="" alt="Vista ampliada" id="lightboxImg">
+</div>
+
+<script>
+// Hero slider
+const slides = document.querySelectorAll('.hero-slider .slide');
+const dotsContainer = document.getElementById('heroDots');
+let currentSlide = 0;
+
+slides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+  dot.onclick = () => goToSlide(i);
+  dotsContainer.appendChild(dot);
+});
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  dotsContainer.children[currentSlide].classList.remove('active');
+  currentSlide = n;
+  slides[currentSlide].classList.add('active');
+  dotsContainer.children[currentSlide].classList.add('active');
+}
+
+setInterval(() => goToSlide((currentSlide + 1) % slides.length), 5000);
+
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+reveals.forEach(el => observer.observe(el));
+
+// Lightbox
+function openLightbox(el) {
+  const img = el.querySelector ? el.querySelector('img') : el;
+  document.getElementById('lightboxImg').src = img.src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
