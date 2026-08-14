@@ -10,6 +10,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://depa-miraflores.pe">
 <link rel="canonical" href="https://depa-miraflores.pe">
+<!-- Google tag (gtag.js) — Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-994790084"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-994790084');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -1267,11 +1275,11 @@ footer {
   <h2>Agende una visita</h2>
   <p class="cta-address">SoHo San Martín · Calle San Martín 380, esq. Colón · Miraflores, Lima</p>
   <div class="cta-buttons">
-    <a href="https://wa.me/51943755863?text=Hola%2C%20me%20interesa%20el%20departamento%20en%20SoHo%20San%20Mart%C3%ADn" class="cta-btn primary" target="_blank">
+    <a href="https://wa.me/51943755863?text=Hola%2C%20me%20interesa%20el%20departamento%20en%20SoHo%20San%20Mart%C3%ADn" class="cta-btn primary" target="_blank" onclick="trackContacto('whatsapp')">
       <span class="wa-icon"></span>
       WhatsApp
     </a>
-    <a href="mailto:sperezpreciado@gmail.com?subject=Consulta%20Departamento%20SoHo%20San%20Mart%C3%ADn" class="cta-btn secondary">
+    <a href="mailto:sperezpreciado@gmail.com?subject=Consulta%20Departamento%20SoHo%20San%20Mart%C3%ADn" class="cta-btn secondary" onclick="trackContacto('email')">
       Enviar Email
     </a>
   </div>
@@ -1338,6 +1346,15 @@ function closeLightbox() {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+// Conversión Google Ads — clic en WhatsApp o Email
+function trackContacto(canal) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', 'conversion', {
+    'send_to': 'AW-994790084/bJyICOjgm-EcEMSVrdoD',
+    'canal': canal
+  });
+}
 </script>
 </body>
 </html>
