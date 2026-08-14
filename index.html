@@ -1275,7 +1275,7 @@ footer {
   <h2>Agende una visita</h2>
   <p class="cta-address">SoHo San Martín · Calle San Martín 380, esq. Colón · Miraflores, Lima</p>
   <div class="cta-buttons">
-    <a href="https://wa.me/51943755863?text=Hola%2C%20me%20interesa%20el%20departamento%20en%20SoHo%20San%20Mart%C3%ADn" class="cta-btn primary" target="_blank" onclick="trackContacto('whatsapp')">
+    <a href="https://wa.me/51943755863?text=Hola%2C%20me%20interesa%20el%20departamento%20en%20SoHo%20San%20Mart%C3%ADn" class="cta-btn primary" target="_blank" rel="noopener" onclick="trackContacto('whatsapp')">
       <span class="wa-icon"></span>
       WhatsApp
     </a>
@@ -1351,7 +1351,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbo
 function trackContacto(canal) {
   if (typeof gtag !== 'function') return;
   gtag('event', 'conversion', {
-    'send_to': 'AW-994790084/bJyICOjgm-EcEMSVrdoD',
+    'send_to': 'AW-994790084/R34-CMa3oOEcEMSVrdoD',
     'canal': canal
   });
 }
