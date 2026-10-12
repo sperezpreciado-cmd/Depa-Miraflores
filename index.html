@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Departamento en Venta — SoHo San Martín, Miraflores</title>
-<meta name="description" content="Departamento de estreno en venta frente a Maido, el mejor restaurante del mundo. 69m², 2 dormitorios, 2 baños, cochera y depósito. Edificio SoHo San Martín, Miraflores, Lima. Venta directa del propietario.">
+<meta name="description" content="Departamento de estreno en venta frente a Maido, el mejor restaurante del mundo. 69m², 2 dormitorios, 2 baños, cochera y depósito. Listo para renta temporal con Wynwood. Edificio SoHo San Martín, Miraflores, Lima.">
 <meta property="og:title" content="USD 220,000 · Departamento frente a Maido — SoHo San Martín, Miraflores">
 <meta property="og:description" content="69m² · 2 Dorm · 2 Baños · Cochera · Depósito · Amoblado · Frente a Maido (N°1 del mundo) · Edificio de estreno con amenidades premium.">
 <meta property="og:type" content="website">
@@ -24,7 +24,7 @@
   "name": "Departamento en venta — SoHo San Martín, Miraflores",
   "url": "https://depa-miraflores.pe/",
   "image": "https://depa-miraflores.pe/fotos/og-image.jpg",
-  "description": "Departamento de estreno frente a Maido: 69 m², 2 dormitorios, 2 baños, cochera y depósito, amoblado. Venta directa del propietario.",
+  "description": "Departamento de estreno frente a Maido: 69 m², 2 dormitorios, 2 baños, cochera y depósito, amoblado y listo para renta temporal con Wynwood.",
   "offers": { "@type": "Offer", "price": "220000", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
   "about": {
     "@type": "Apartment",
@@ -43,6 +43,9 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-994790084');
+  // Google Analytics 4 — pegar aquí el ID de medición (G-XXXXXXXXXX) para activarlo.
+  var GA4_ID = '';
+  if (GA4_ID) gtag('config', GA4_ID);
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1040,6 +1043,50 @@ footer {
 
 .calc-note { font-size: 0.75rem; color: var(--muted); margin-top: 0.8rem; font-style: italic; }
 
+/* ========== RENTA TEMPORAL ========== */
+.str-block {
+  max-width: 900px;
+  margin: 3rem auto 0;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  text-align: left;
+  background: var(--dark);
+  padding: 2.5rem;
+  border-top: 2px solid var(--gold);
+}
+
+.str-block .section-label { color: var(--gold); }
+.str-block h3 { font-size: 1.9rem; color: #fff; margin-bottom: 0.6rem; }
+.str-block p:not(.section-label) { font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+
+.str-figure {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1.05;
+}
+
+.str-figure small {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-top: 0.5rem;
+}
+
+.calc-str { font-size: 0.95rem; color: var(--text); margin-top: 1rem; }
+.calc-str strong { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 700; color: var(--warm-brown); }
+
+@media (max-width: 768px) {
+  .str-block { grid-template-columns: 1fr; padding: 1.8rem; }
+}
+
 /* ========== FAQ ========== */
 .faq-section { background: var(--sand); }
 .faq { border-top: 1px solid var(--light-border); max-width: 800px; margin-top: 2rem; }
@@ -1164,7 +1211,7 @@ footer {
   <div class="hero-overlay"></div>
   <div class="hero-dots" id="heroDots"></div>
   <div class="hero-content">
-    <p class="hero-label">Departamento en Venta — Dueño Directo</p>
+    <p class="hero-label">Departamento en Venta — Listo para Airbnb</p>
     <h1>SoHo San Martín</h1>
     <p class="hero-address">Calle San Martín 380, esq. Calle Colón · Miraflores, Lima · Frente a Maido</p>
     <div class="hero-specs">
@@ -1172,7 +1219,7 @@ footer {
       <span class="hero-spec">2 Dormitorios</span>
       <span class="hero-spec">2 Baños</span>
       <span class="hero-spec">Cochera + Depósito</span>
-      <span class="hero-spec">Amoblado</span>
+      <span class="hero-spec">Amoblado + Listo para Airbnb</span>
     </div>
     <div class="hero-offer">
       <div class="hero-price">USD 220,000<small>Amoblado · Cochera + Depósito incluidos</small></div>
@@ -1187,9 +1234,9 @@ footer {
 <!-- TRUST STRIP -->
 <section class="trust-section" aria-label="Por qué este departamento">
   <div class="trust-strip">
-    <div class="trust-item"><strong>Dueño directo</strong><span>Sin intermediarios</span></div>
+    <div class="trust-item"><strong>Listo para Airbnb</strong><span>Implementado por Wynwood</span></div>
     <div class="trust-item"><strong>De estreno</strong><span>Edificio con certificación sostenible</span></div>
-    <div class="trust-item"><strong>Agosto 2026</strong><span>Desocupado o con inquilino</span></div>
+    <div class="trust-item"><strong>Dic 2026</strong><span>Entrega disponible</span></div>
     <div class="trust-item"><strong>USD 3,188/m²</strong><span>Precio por metro cuadrado</span></div>
   </div>
 </section>
@@ -1199,7 +1246,7 @@ footer {
   <div class="section-inner reveal">
     <p class="section-label">Resumen</p>
     <h2 class="section-title">Una oportunidad única en<br>el corazón de Miraflores</h2>
-    <p class="section-desc">Departamento de estreno en edificio sostenible con certificación ambiental, frente a Maido — el mejor restaurante del mundo (50 Best 2025) — y en la esquina de Rafael. A 2 cuadras de Av. Larco, 3 del Parque Kennedy y 5 minutos de Larcomar. Venta directa del propietario, sin intermediarios.</p>
+    <p class="section-desc">Departamento de estreno en edificio sostenible con certificación ambiental, frente a Maido — el mejor restaurante del mundo (50 Best 2025) — y en la esquina de Rafael. A 2 cuadras de Av. Larco, 3 del Parque Kennedy y 5 minutos de Larcomar. Se entrega amoblado y listo para renta temporal, con la implementación de Wynwood.</p>
     <div class="specs-grid">
       <div class="spec-card">
         <div class="spec-value">69 m²</div>
@@ -1545,7 +1592,7 @@ footer {
   <div class="section-inner reveal">
     <p class="section-label">Propuesta de Valor</p>
     <div class="price-amount">USD 220,000</div>
-    <p class="price-sub">Departamento + Cochera + Depósito · Amoblado · Venta directa del propietario</p>
+    <p class="price-sub">Departamento + Cochera + Depósito · Amoblado · Listo para renta temporal</p>
     <div class="value-cards">
       <div class="value-card">
         <div class="value-card-title">USD 3,188/m²</div>
@@ -1553,28 +1600,38 @@ footer {
         <div class="value-card-desc">Competitivo para edificio de estreno con amenidades premium en zona céntrica de Miraflores.</div>
       </div>
       <div class="value-card">
-        <div class="value-card-title">~5.5% yield</div>
+        <div class="value-card-title">~6.5% yield</div>
         <div class="value-card-sub">Rentabilidad por alquiler</div>
-        <div class="value-card-desc">Alquiler estimado USD 950–1,100/mes. PER de 17–19 años, alineado al mercado de Miraflores.</div>
+        <div class="value-card-desc">Alquiler tradicional estimado USD 1,100–1,300/mes. PER de 14–17 años.</div>
       </div>
       <div class="value-card">
-        <div class="value-card-title">Agosto 2026</div>
+        <div class="value-card-title">Diciembre 2026</div>
         <div class="value-card-sub">Entrega disponible</div>
         <div class="value-card-desc">Entrega desocupada o con inquilino vigente, a elección del comprador.</div>
       </div>
     </div>
 
+    <div class="str-block">
+      <div>
+        <p class="section-label">Renta temporal</p>
+        <h3>Listo para Airbnb desde el primer día</h3>
+        <p>Viene con la implementación de Wynwood, el operador N°1 de Airbnb del país. Se entrega amoblado y equipado para poner en renta temporal de inmediato.</p>
+      </div>
+      <div class="str-figure">+10% a +30%<small>de renta mensual adicional vs. alquiler tradicional</small></div>
+    </div>
+
     <div class="investor-block">
       <p class="section-label">Para inversionistas</p>
       <h3>Calcule su rentabilidad</h3>
-      <p>Ajuste el precio y el alquiler esperado. El rango de alquiler estimado es USD 950–1,100/mes.</p>
+      <p>Ajuste el precio y el alquiler esperado. El alquiler tradicional estimado es USD 1,100–1,300/mes.</p>
       <div class="calc">
         <div class="calc-cell"><label for="calcPrecio">Precio (USD)</label><input id="calcPrecio" type="number" inputmode="numeric" value="220000" step="1000" min="0"></div>
-        <div class="calc-cell"><label for="calcAlquiler">Alquiler / mes (USD)</label><input id="calcAlquiler" type="number" inputmode="numeric" value="1000" step="50" min="0"></div>
-        <div class="calc-cell"><span class="calc-label">Rentabilidad bruta</span><div class="calc-out" id="calcYield">5.5%</div></div>
-        <div class="calc-cell"><span class="calc-label">Años de recuperación</span><div class="calc-out" id="calcPer">18.3</div></div>
+        <div class="calc-cell"><label for="calcAlquiler">Alquiler / mes (USD)</label><input id="calcAlquiler" type="number" inputmode="numeric" value="1200" step="50" min="0"></div>
+        <div class="calc-cell"><span class="calc-label">Rentabilidad bruta</span><div class="calc-out" id="calcYield">6.5%</div></div>
+        <div class="calc-cell"><span class="calc-label">Años de recuperación</span><div class="calc-out" id="calcPer">15.3</div></div>
       </div>
-      <p class="calc-note">Rentabilidad bruta: no descuenta mantenimiento, impuestos ni periodos de vacancia.</p>
+      <p class="calc-str">Con renta temporal (+10% a +30% de renta mensual): <strong id="calcStr">7.2% – 8.5%</strong> bruto anual</p>
+      <p class="calc-note">Rentabilidad bruta: no descuenta mantenimiento, impuestos, comisión del operador ni periodos de vacancia.</p>
       <div class="section-cta">
         <a href="https://wa.me/51943755863?text=Hola%2C%20me%20interesa%20el%20departamento%20en%20SoHo%20San%20Mart%C3%ADn%20como%20inversi%C3%B3n.%20%C2%BFPodemos%20conversar%3F" class="cta-btn outline" target="_blank" rel="noopener" onclick="trackContacto('whatsapp_inversion')">
           Consultar como inversión
@@ -1596,15 +1653,15 @@ footer {
       </details>
       <details>
         <summary>¿Cuándo se puede entregar?</summary>
-        <p>En agosto de 2026, desocupado o con el inquilino vigente, a elección del comprador.</p>
+        <p>En diciembre de 2026, desocupado o con el inquilino vigente, a elección del comprador.</p>
       </details>
       <details>
         <summary>¿El precio es negociable?</summary>
         <p>Es un precio referencial sujeto a negociación. Escríbanos y lo conversamos.</p>
       </details>
       <details>
-        <summary>¿Con quién trato la compra?</summary>
-        <p>Directamente con el propietario, sin intermediarios.</p>
+        <summary>¿Se puede alquilar por Airbnb?</summary>
+        <p>Sí. Se entrega amoblado y listo para renta temporal, con la implementación de Wynwood, el operador N°1 de Airbnb del país. La renta temporal puede generar entre 10% y 30% adicional de renta mensual frente al alquiler tradicional.</p>
       </details>
       <details>
         <summary>¿Cómo es el acceso a la cochera?</summary>
@@ -1636,11 +1693,11 @@ footer {
       Llamar
     </a>
   </div>
-  <p class="disclaimer">* Precios referenciales sujetos a negociación. Valores de alquiler basados en comparables del mercado. Venta directa del propietario.</p>
+  <p class="disclaimer">* Precios referenciales sujetos a negociación. Valores de alquiler basados en comparables del mercado. El ingreso adicional por renta temporal es una estimación y no está garantizado.</p>
 </section>
 
 <footer>
-  <p>Departamento en Venta — SoHo San Martín, Miraflores · Venta directa del propietario · 2026</p>
+  <p>Departamento en Venta — SoHo San Martín, Miraflores · 2026</p>
 </footer>
 
 <!-- BARRA FIJA MÓVIL -->
@@ -1728,6 +1785,9 @@ function updateCalc() {
   const alquiler = +calcAlquiler.value || 0;
   document.getElementById('calcYield').textContent = precio ? (alquiler * 1200 / precio).toFixed(1) + '%' : '–';
   document.getElementById('calcPer').textContent = alquiler ? (precio / (alquiler * 12)).toFixed(1) : '–';
+  document.getElementById('calcStr').textContent = precio
+    ? (alquiler * 1.1 * 1200 / precio).toFixed(1) + '% – ' + (alquiler * 1.3 * 1200 / precio).toFixed(1) + '%'
+    : '–';
 }
 calcPrecio.addEventListener('input', updateCalc);
 calcAlquiler.addEventListener('input', updateCalc);
@@ -1736,12 +1796,21 @@ updateCalc();
 // Conversión Google Ads — clic en WhatsApp, teléfono o Email.
 // Todos los botones usan la misma acción de conversión; 'canal' indica cuál fue:
 // whatsapp_hero, whatsapp_sticky, whatsapp_inversion, whatsapp_faq, whatsapp, telefono, email
+// Además, si GA4 está activo, cada clic se envía como evento 'clic_contacto' con el mismo 'canal'.
 function trackContacto(canal) {
   if (typeof gtag !== 'function') return;
   gtag('event', 'conversion', {
     'send_to': 'AW-994790084/R34-CMa3oOEcEMSVrdoD',
     'canal': canal
   });
+  if (GA4_ID) {
+    gtag('event', 'clic_contacto', {
+      'send_to': GA4_ID,
+      'canal': canal,
+      'medio': canal.split('_')[0],
+      'ubicacion': canal.split('_')[1] || 'contacto'
+    });
+  }
 }
 </script>
 </body>
