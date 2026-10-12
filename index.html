@@ -5,11 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Departamento en Venta — SoHo San Martín, Miraflores</title>
 <meta name="description" content="Departamento de estreno en venta frente a Maido, el mejor restaurante del mundo. 69m², 2 dormitorios, 2 baños, cochera y depósito. Edificio SoHo San Martín, Miraflores, Lima. Venta directa del propietario.">
-<meta property="og:title" content="Departamento en Venta frente a Maido — SoHo San Martín, Miraflores">
+<meta property="og:title" content="USD 220,000 · Departamento frente a Maido — SoHo San Martín, Miraflores">
 <meta property="og:description" content="69m² · 2 Dorm · 2 Baños · Cochera · Depósito · Amoblado · Frente a Maido (N°1 del mundo) · Edificio de estreno con amenidades premium.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://depa-miraflores.pe/">
+<meta property="og:image" content="https://depa-miraflores.pe/fotos/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sala del departamento en SoHo San Martín, Miraflores">
+<meta property="og:locale" content="es_PE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1A1A1A">
 <link rel="canonical" href="https://depa-miraflores.pe/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateListing",
+  "name": "Departamento en venta — SoHo San Martín, Miraflores",
+  "url": "https://depa-miraflores.pe/",
+  "image": "https://depa-miraflores.pe/fotos/og-image.jpg",
+  "description": "Departamento de estreno frente a Maido: 69 m², 2 dormitorios, 2 baños, cochera y depósito, amoblado. Venta directa del propietario.",
+  "offers": { "@type": "Offer", "price": "220000", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+  "about": {
+    "@type": "Apartment",
+    "floorSize": { "@type": "QuantitativeValue", "value": 69, "unitCode": "MTK" },
+    "numberOfRooms": 2,
+    "numberOfBedrooms": 2,
+    "numberOfBathroomsTotal": 2,
+    "address": { "@type": "PostalAddress", "streetAddress": "Calle San Martín 380", "addressLocality": "Miraflores", "addressRegion": "Lima", "addressCountry": "PE" }
+  }
+}
+</script>
 <!-- Google tag (gtag.js) — Google Ads -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-994790084"></script>
 <script>
@@ -31,7 +57,9 @@
   --gold: #C4A265;
   --dark: #1A1A1A;
   --text: #3D3D3D;
-  --muted: #7A7A7A;
+  --muted: #6B6B6B; /* era #7A7A7A: no cumplía contraste AA sobre --sand */
+  --brown-text: #75603F;
+  --whatsapp: #25D366;
   --light-border: #E8E2DB;
 }
 
@@ -251,7 +279,7 @@ section { padding: clamp(3rem, 8vw, 7rem) clamp(1.5rem, 5vw, 6rem); }
   font-size: 0.7rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--warm-brown);
+  color: var(--brown-text);
   margin-bottom: 0.75rem;
 }
 
@@ -533,7 +561,7 @@ section { padding: clamp(3rem, 8vw, 7rem) clamp(1.5rem, 5vw, 6rem); }
 .value-card {
   background: var(--sand);
   padding: 2rem;
-  border-left: 3px solid var(--gold);
+  border-top: 2px solid var(--gold);
 }
 
 .value-card-title {
@@ -731,16 +759,38 @@ footer {
   align-items: flex-start;
 }
 
-.loc-icon {
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
+.loc-marker {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
   background: rgba(196,162,101,0.15);
   border-radius: 50%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.loc-marker small {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.loc-marker.word {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .loc-card h4 {
@@ -779,7 +829,7 @@ footer {
   margin-top: 2rem;
   padding: 1.5rem;
   background: rgba(255,255,255,0.05);
-  border-left: 3px solid var(--gold);
+  border-top: 1px solid var(--gold);
 }
 
 .parking-callout h4 {
@@ -858,9 +908,239 @@ footer {
 /* Disclaimer */
 .disclaimer {
   font-size: 0.72rem;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.55);
   margin-top: 2rem;
   font-style: italic;
+}
+
+/* Legibilidad del texto dorado sobre fotos claras */
+.hero-label, .hero-spec, .hero-address { text-shadow: 0 1px 12px rgba(0,0,0,0.55); }
+
+/* ========== HERO OFFER (precio + CTA) ========== */
+.hero-offer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s 1.1s forwards;
+}
+
+.hero-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.hero-price small {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-top: 0.4rem;
+}
+
+/* ========== TRUST STRIP ========== */
+.trust-section { padding-top: 0; padding-bottom: 0; background: var(--cream); }
+
+.trust-strip {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--light-border);
+}
+
+.trust-item { padding: 1.6rem 1rem; text-align: center; }
+.trust-item + .trust-item { border-left: 1px solid var(--light-border); }
+
+.trust-item strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.trust-item span { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; }
+
+/* ========== BOTONES EXTRA ========== */
+.cta-btn.outline { border: 1px solid var(--dark); color: var(--dark); }
+.cta-btn.outline:hover { background: var(--dark); color: #fff; }
+.cta-btn:focus-visible, .nav-cta:focus-visible, .sticky-bar a:focus-visible { outline: 2px solid var(--dark); outline-offset: 3px; }
+.cta-section .cta-btn:focus-visible, .hero .cta-btn:focus-visible { outline-color: var(--gold); }
+.section-cta { margin-top: 2.5rem; text-align: center; }
+
+/* ========== PLANO SÓTANO ========== */
+.floor-plan-figures { display: flex; flex-direction: column; gap: 1rem; }
+.floor-plan-figures figcaption {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 0.6rem;
+}
+.floor-plan-image img { cursor: pointer; }
+
+/* ========== CALCULADORA INVERSIÓN ========== */
+.investor-block { max-width: 900px; margin: 4rem auto 0; text-align: left; }
+.investor-block h3 { font-size: 1.8rem; color: var(--dark); margin-bottom: 0.4rem; }
+.investor-block > p { font-size: 0.95rem; color: var(--muted); margin-bottom: 1.5rem; }
+
+.calc {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--light-border);
+  border: 1px solid var(--light-border);
+}
+
+.calc-cell { background: var(--cream); padding: 1.4rem; }
+
+.calc-cell label, .calc-cell .calc-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.calc-cell input {
+  width: 100%;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--dark);
+  border: none;
+  border-bottom: 1px solid var(--light-border);
+  background: none;
+  padding: 0.1rem 0;
+}
+
+.calc-cell input:focus { outline: none; border-bottom: 2px solid var(--dark); }
+
+.calc-out {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--warm-brown);
+  line-height: 1.1;
+}
+
+.calc-note { font-size: 0.75rem; color: var(--muted); margin-top: 0.8rem; font-style: italic; }
+
+/* ========== FAQ ========== */
+.faq-section { background: var(--sand); }
+.faq { border-top: 1px solid var(--light-border); max-width: 800px; margin-top: 2rem; }
+.faq details { border-bottom: 1px solid var(--light-border); }
+
+.faq summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; font-family: 'Outfit', sans-serif; font-weight: 300; color: var(--brown-text); }
+.faq details[open] summary::after { content: '–'; }
+.faq details p { padding: 0 0 1.2rem; font-size: 0.95rem; color: var(--text); max-width: 640px; }
+
+/* ========== BARRA FIJA MÓVIL ========== */
+.sticky-bar { display: none; }
+
+@media (max-width: 768px) {
+  .sticky-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+    background: #fff;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.12);
+    transform: translateY(110%);
+    transition: transform 0.35s ease;
+  }
+
+  .sticky-bar.visible { transform: translateY(0); }
+
+  footer { padding-bottom: 6rem; }
+
+  .trust-strip { grid-template-columns: 1fr 1fr; }
+  .trust-item:nth-child(3) { border-left: none; }
+  .trust-item:nth-child(n+3) { border-top: 1px solid var(--light-border); }
+
+  .calc { grid-template-columns: 1fr 1fr; }
+  .hero-price { font-size: 1.9rem; }
+}
+
+.sticky-bar-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--dark);
+  line-height: 1.1;
+}
+
+.sticky-bar-price small { display: block; font-family: 'Outfit', sans-serif; font-weight: 400; font-size: 0.72rem; color: var(--muted); }
+
+.sticky-bar a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gold);
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.1rem;
+}
+
+.wa-disc {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wa-disc .wa-icon { width: 15px; height: 15px; }
+
+/* Pantallas táctiles: sin hover, mostrar siempre los captions */
+@media (hover: none) {
+  .gallery-item .caption { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-label, .hero h1, .hero-address, .hero-specs, .hero-offer { animation: none; opacity: 1; transform: none; }
 }
 </style>
 </head>
@@ -876,6 +1156,7 @@ footer {
 <section class="hero" id="inicio">
   <div class="hero-slider" id="heroSlider">
     <div class="slide active" style="background-image:url('fotos/sala-01.jpg')"></div>
+    <div class="slide" style="background-image:url('fotos/sala-03.jpg')"></div>
     <div class="slide" style="background-image:url('fotos/dormitorio-01.jpg')"></div>
     <div class="slide" style="background-image:url('fotos/cocina-01.jpg')"></div>
     <div class="slide" style="background-image:url('fotos/sala-02.jpg')"></div>
@@ -893,6 +1174,23 @@ footer {
       <span class="hero-spec">Cochera + Depósito</span>
       <span class="hero-spec">Amoblado</span>
     </div>
+    <div class="hero-offer">
+      <div class="hero-price">USD 220,000<small>Amoblado · Cochera + Depósito incluidos</small></div>
+      <a href="https://wa.me/51943755863?text=Hola%2C%20me%20interesa%20el%20departamento%20en%20SoHo%20San%20Mart%C3%ADn.%20Quisiera%20agendar%20una%20visita." class="cta-btn primary" target="_blank" rel="noopener" onclick="trackContacto('whatsapp_hero')">
+        <span class="wa-icon"></span>
+        Agendar visita
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust-section" aria-label="Por qué este departamento">
+  <div class="trust-strip">
+    <div class="trust-item"><strong>Dueño directo</strong><span>Sin intermediarios</span></div>
+    <div class="trust-item"><strong>De estreno</strong><span>Edificio con certificación sostenible</span></div>
+    <div class="trust-item"><strong>Agosto 2026</strong><span>Desocupado o con inquilino</span></div>
+    <div class="trust-item"><strong>USD 3,188/m²</strong><span>Precio por metro cuadrado</span></div>
   </div>
 </section>
 
@@ -1031,7 +1329,7 @@ footer {
     <div class="location-grid">
       <div class="location-highlights">
         <div class="loc-card">
-          <div class="loc-icon">🍽️</div>
+          <div class="loc-marker word">Al frente</div>
           <div>
             <span class="loc-badge">N°1 del Mundo — 50 Best 2025</span>
             <h4>Frente a Maido</h4>
@@ -1039,35 +1337,35 @@ footer {
           </div>
         </div>
         <div class="loc-card">
-          <div class="loc-icon">🥂</div>
+          <div class="loc-marker word">Esquina</div>
           <div>
             <h4>En la esquina de Rafael</h4>
             <p>Restaurante emblemático de Lima, reconocido internacionalmente. A pasos de tu puerta.</p>
           </div>
         </div>
         <div class="loc-card">
-          <div class="loc-icon">🛍️</div>
+          <div class="loc-marker">2<small>cuadras</small></div>
           <div>
             <h4>A 2 cuadras de Av. Larco</h4>
             <p>El eje principal que conecta Parque Kennedy con Larcomar. Tiendas, cafés, bancos, transporte — todo a pie.</p>
           </div>
         </div>
         <div class="loc-card">
-          <div class="loc-icon">🌊</div>
+          <div class="loc-marker">5<small>min</small></div>
           <div>
             <h4>Larcomar y Malecón a 5 minutos</h4>
             <p>Centro comercial con vista al Pacífico, cines, restaurantes y acceso directo al malecón para caminar o correr.</p>
           </div>
         </div>
         <div class="loc-card">
-          <div class="loc-icon">🌳</div>
+          <div class="loc-marker">3<small>cuadras</small></div>
           <div>
             <h4>Parque Kennedy a 3 cuadras</h4>
             <p>El corazón de Miraflores. Feria artesanal, anfiteatro, cafés y vida nocturna.</p>
           </div>
         </div>
         <div class="parking-callout">
-          <h4>🚗 Cochera amplia y de fácil acceso</h4>
+          <h4>Cochera amplia y de fácil acceso</h4>
           <p>Ingreso vehicular directo por Calle Colón. Rampa doble con puerta levadiza. Estacionamiento cómodo en sótano, sin maniobras complicadas.</p>
         </div>
       </div>
@@ -1090,8 +1388,8 @@ footer {
         <div class="caption">Kitchen Lounge</div>
       </div>
       <div class="areas-card" onclick="openLightbox(this)">
-        <img src="fotos/areas-02.webp" alt="Área Grill" loading="lazy">
-        <div class="caption">Área Grill</div>
+        <img src="fotos/areas-02.webp" alt="Zona de parrilla con terraza" loading="lazy">
+        <div class="caption">Zona de Parrilla</div>
       </div>
       <div class="areas-card" onclick="openLightbox(this)">
         <img src="fotos/areas-03.webp" alt="Sauna y Jacuzzi" loading="lazy">
@@ -1102,32 +1400,20 @@ footer {
         <div class="caption">Gimnasio</div>
       </div>
       <div class="areas-card" onclick="openLightbox(this)">
-        <img src="fotos/areas-05.webp" alt="Área Grill" loading="lazy">
-        <div class="caption">Área Grill</div>
+        <img src="fotos/areas-07.webp" alt="Sala de coworking" loading="lazy">
+        <div class="caption">Coworking</div>
       </div>
       <div class="areas-card" onclick="openLightbox(this)">
-        <img src="fotos/areas-06.webp" alt="Área Grill" loading="lazy">
-        <div class="caption">Área Grill</div>
+        <img src="fotos/areas-08.webp" alt="Estacionamiento de bicicletas" loading="lazy">
+        <div class="caption">Estacionamiento de bicis</div>
       </div>
       <div class="areas-card" onclick="openLightbox(this)">
-        <img src="fotos/areas-07.webp" alt="Co-working" loading="lazy">
-        <div class="caption">Co-working</div>
-      </div>
-      <div class="areas-card" onclick="openLightbox(this)">
-        <img src="fotos/areas-08.webp" alt="Bike Parking" loading="lazy">
-        <div class="caption">Bike Parking</div>
-      </div>
-      <div class="areas-card" onclick="openLightbox(this)">
-        <img src="fotos/areas-09.webp" alt="Pet Washroom" loading="lazy">
-        <div class="caption">Pet Washroom</div>
+        <img src="fotos/areas-09.webp" alt="Zona de lavado de mascotas" loading="lazy">
+        <div class="caption">Lavado de mascotas</div>
       </div>
       <div class="areas-card" onclick="openLightbox(this)">
         <img src="fotos/areas-10.webp" alt="Lobby" loading="lazy">
         <div class="caption">Lobby</div>
-      </div>
-      <div class="areas-card" onclick="openLightbox(this)">
-        <img src="fotos/areas-11.webp" alt="Área Grill" loading="lazy">
-        <div class="caption">Área Grill</div>
       </div>
       <div class="areas-card" onclick="openLightbox(this)">
         <img src="fotos/exterior-01.webp" alt="Exterior del edificio" loading="lazy">
@@ -1144,8 +1430,19 @@ footer {
     <p class="section-label">Distribución</p>
     <h2 class="section-title">Plano del Departamento X08 · 69.32 m²</h2>
     <div class="floor-plan-layout">
-      <div class="floor-plan-image">
-        <img src="fotos/plano-dpto.jpg" alt="Plano de distribución" onclick="openLightbox(this.parentElement)">
+      <div class="floor-plan-figures">
+        <figure>
+          <div class="floor-plan-image">
+            <img src="fotos/plano-dpto.jpg" alt="Plano de distribución del departamento" onclick="openLightbox(this.parentElement)">
+          </div>
+          <figcaption>Departamento X08 · 69.32 m²</figcaption>
+        </figure>
+        <figure>
+          <div class="floor-plan-image">
+            <img src="fotos/plano-sotano.jpg" alt="Plano del sótano con cochera y depósito" loading="lazy" onclick="openLightbox(this.parentElement)">
+          </div>
+          <figcaption>Sótano · Cochera y depósito</figcaption>
+        </figure>
       </div>
       <div>
         <ul class="room-list">
@@ -1266,6 +1563,59 @@ footer {
         <div class="value-card-desc">Entrega desocupada o con inquilino vigente, a elección del comprador.</div>
       </div>
     </div>
+
+    <div class="investor-block">
+      <p class="section-label">Para inversionistas</p>
+      <h3>Calcule su rentabilidad</h3>
+      <p>Ajuste el precio y el alquiler esperado. El rango de alquiler estimado es USD 950–1,100/mes.</p>
+      <div class="calc">
+        <div class="calc-cell"><label for="calcPrecio">Precio (USD)</label><input id="calcPrecio" type="number" inputmode="numeric" value="220000" step="1000" min="0"></div>
+        <div class="calc-cell"><label for="calcAlquiler">Alquiler / mes (USD)</label><input id="calcAlquiler" type="number" inputmode="numeric" value="1000" step="50" min="0"></div>
+        <div class="calc-cell"><span class="calc-label">Rentabilidad bruta</span><div class="calc-out" id="calcYield">5.5%</div></div>
+        <div class="calc-cell"><span class="calc-label">Años de recuperación</span><div class="calc-out" id="calcPer">18.3</div></div>
+      </div>
+      <p class="calc-note">Rentabilidad bruta: no descuenta mantenimiento, impuestos ni periodos de vacancia.</p>
+      <div class="section-cta">
+        <a href="https://wa.me/51943755863?text=Hola%2C%20me%20interesa%20el%20departamento%20en%20SoHo%20San%20Mart%C3%ADn%20como%20inversi%C3%B3n.%20%C2%BFPodemos%20conversar%3F" class="cta-btn outline" target="_blank" rel="noopener" onclick="trackContacto('whatsapp_inversion')">
+          Consultar como inversión
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="preguntas">
+  <div class="section-inner reveal">
+    <p class="section-label">Preguntas frecuentes</p>
+    <h2 class="section-title">Lo que suelen preguntarnos</h2>
+    <div class="faq">
+      <details>
+        <summary>¿Se vende amoblado?</summary>
+        <p>Sí. El precio incluye el departamento amoblado, la cochera y el depósito.</p>
+      </details>
+      <details>
+        <summary>¿Cuándo se puede entregar?</summary>
+        <p>En agosto de 2026, desocupado o con el inquilino vigente, a elección del comprador.</p>
+      </details>
+      <details>
+        <summary>¿El precio es negociable?</summary>
+        <p>Es un precio referencial sujeto a negociación. Escríbanos y lo conversamos.</p>
+      </details>
+      <details>
+        <summary>¿Con quién trato la compra?</summary>
+        <p>Directamente con el propietario, sin intermediarios.</p>
+      </details>
+      <details>
+        <summary>¿Cómo es el acceso a la cochera?</summary>
+        <p>Ingreso vehicular directo por Calle Colón, con rampa doble y puerta levadiza. La cochera está en sótano y no requiere maniobras complicadas.</p>
+      </details>
+    </div>
+    <div class="section-cta" style="text-align:left">
+      <a href="https://wa.me/51943755863?text=Hola%2C%20tengo%20una%20pregunta%20sobre%20el%20departamento%20en%20SoHo%20San%20Mart%C3%ADn." class="cta-btn outline" target="_blank" rel="noopener" onclick="trackContacto('whatsapp_faq')">
+        ¿Otra pregunta? Escríbanos
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1282,6 +1632,9 @@ footer {
     <a href="mailto:sperezpreciado@gmail.com?subject=Consulta%20Departamento%20SoHo%20San%20Mart%C3%ADn" class="cta-btn secondary" onclick="trackContacto('email')">
       Enviar Email
     </a>
+    <a href="tel:+51943755863" class="cta-btn secondary" onclick="trackContacto('telefono')">
+      Llamar
+    </a>
   </div>
   <p class="disclaimer">* Precios referenciales sujetos a negociación. Valores de alquiler basados en comparables del mercado. Venta directa del propietario.</p>
 </section>
@@ -1289,6 +1642,15 @@ footer {
 <footer>
   <p>Departamento en Venta — SoHo San Martín, Miraflores · Venta directa del propietario · 2026</p>
 </footer>
+
+<!-- BARRA FIJA MÓVIL -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-bar-price">USD 220,000<small>69 m² · 2D · 2B · Cochera + Depósito</small></div>
+  <a href="https://wa.me/51943755863?text=Hola%2C%20me%20interesa%20el%20departamento%20en%20SoHo%20San%20Mart%C3%ADn.%20Quisiera%20agendar%20una%20visita." target="_blank" rel="noopener" onclick="trackContacto('whatsapp_sticky')">
+    <span class="wa-disc"><span class="wa-icon"></span></span>
+    Escribir
+  </a>
+</div>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -1317,7 +1679,9 @@ function goToSlide(n) {
   dotsContainer.children[currentSlide].classList.add('active');
 }
 
-setInterval(() => goToSlide((currentSlide + 1) % slides.length), 5000);
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  setInterval(() => goToSlide((currentSlide + 1) % slides.length), 5000);
+}
 
 // Nav scroll
 const nav = document.getElementById('nav');
@@ -1347,7 +1711,31 @@ function closeLightbox() {
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-// Conversión Google Ads — clic en WhatsApp o Email
+// Barra fija móvil: visible después del hero, oculta en la sección de contacto
+const stickyBar = document.getElementById('stickyBar');
+const hero = document.getElementById('inicio');
+const contacto = document.getElementById('contacto');
+let pastHero = false, atContact = false;
+const updateSticky = () => stickyBar.classList.toggle('visible', pastHero && !atContact);
+new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting; updateSticky(); }).observe(hero);
+new IntersectionObserver(([e]) => { atContact = e.isIntersecting; updateSticky(); }).observe(contacto);
+
+// Calculadora de rentabilidad
+const calcPrecio = document.getElementById('calcPrecio');
+const calcAlquiler = document.getElementById('calcAlquiler');
+function updateCalc() {
+  const precio = +calcPrecio.value || 0;
+  const alquiler = +calcAlquiler.value || 0;
+  document.getElementById('calcYield').textContent = precio ? (alquiler * 1200 / precio).toFixed(1) + '%' : '–';
+  document.getElementById('calcPer').textContent = alquiler ? (precio / (alquiler * 12)).toFixed(1) : '–';
+}
+calcPrecio.addEventListener('input', updateCalc);
+calcAlquiler.addEventListener('input', updateCalc);
+updateCalc();
+
+// Conversión Google Ads — clic en WhatsApp, teléfono o Email.
+// Todos los botones usan la misma acción de conversión; 'canal' indica cuál fue:
+// whatsapp_hero, whatsapp_sticky, whatsapp_inversion, whatsapp_faq, whatsapp, telefono, email
 function trackContacto(canal) {
   if (typeof gtag !== 'function') return;
   gtag('event', 'conversion', {
